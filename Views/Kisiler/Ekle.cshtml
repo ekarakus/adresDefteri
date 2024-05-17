@@ -1,0 +1,45 @@
+@model Kisi
+@{
+    ViewData["Title"] = "Ekle";
+}
+@{
+    if (@ViewBag.mesaj != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.mesaj
+        </div>
+    }
+}
+<form asp-controller="Kisiler" asp-action="Ekle" asp-antiforgery="true" method="post">
+    <h1>Kişi kaydet</h1>
+    <div class="row mt-2">
+        <label asp-for="AdSoyad" class="col-3"></label>
+        <div class="col-9">
+            <input asp-for="AdSoyad">
+            <span asp-validation-for="AdSoyad" class="text-danger">
+            </span>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <label asp-for="Email" class="col-3"></label>
+        <div class="col-9">
+            <input asp-for="Email">
+            <span asp-validation-for="Email" class="text-danger">
+            </span>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <label asp-for="Telefon" class="col-3"></label>
+        <div class="col-9">
+            <input asp-for="Telefon">
+            <span asp-validation-for="Telefon" class="text-danger">
+            </span>
+        </div>
+    </div>
+    <input type="Submit" value="Kaydet" class=" btn btn-success">
+
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial">
+}

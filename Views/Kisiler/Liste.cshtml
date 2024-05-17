@@ -1,0 +1,12 @@
+@model List<Kisi>
+@{
+    ViewData["Title"] = "Liste";
+}
+@foreach (var kisi in @Model)
+{
+    <div class="row mt-2">
+        <div class="col-4">@kisi.AdSoyad</div>
+        <div class="col-4">@kisi.Email</div>
+        <div class="col-4">@kisi.Telefon</div>
+    </div>
+}

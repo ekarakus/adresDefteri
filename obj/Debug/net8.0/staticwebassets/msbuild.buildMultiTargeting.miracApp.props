@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\miracApp.props" />
+</Project>
